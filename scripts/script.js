@@ -32,6 +32,8 @@ function clickedButton(evt){
         getRandomQuote();
     }else if(evt.target.innerText==="tweet"){
         //tweet function
+        window.open("https://twitter.com/intent/tweet?text="+"Check out https://github.com/serg-gavel/RandomQuoteMachine \n\" "+sliderContent[i].children[1].children[0].innerText+" -"+sliderContent[1].children[1].children[1].innerText+"\" \n",'_blank');
+        //console.log(sliderContent[1].children[1].children[1].innerText);
     }
 }
 function eventLoader(){
