@@ -1,6 +1,8 @@
 var sliderContent = document.getElementsByClassName('content-container');
 // var quoteButton = document.getElementById('quote-btn');
-var i=1;
+var i=0;
+var prevQuote=0;
+var maxQuotes=6;
 var firstRun=true;
 // function changeContent() {
 //     for(i=0; i<=sliderContent.length; i++)
@@ -14,40 +16,30 @@ var firstRun=true;
 //
 // }
 function getRandomQuote(){
+	prevQuote=i;
+	i=Math.floor(Math.random() * (maxQuotes - 0)) + 0;
+    sliderContent[prevQuote].classList.add('hidden');
+    sliderContent[prevQuote].classList.remove('visible');
 
-    if(i>=1){
-        sliderContent[i-1].classList.add('hidden');
-        sliderContent[i-1].classList.remove('visible');
-    }
     sliderContent[i].classList.remove('hidden');
     sliderContent[i].classList.add('visible');
-    if(i>=7){
-        // sliderContent[i].classList.add('hidden');
-        // sliderContent[i].classList.remove('visible');
-        // i = math.random(i*i);
-        // sliderContent[i].classList.remove('hidden');
-        // sliderContent[i].classList.add('visible');
-    }
-    i++;
 }
 function clickedButton(evt){
     console.log("clickedButton Passed");
     console.log(evt.target.innerText);
 
     if(evt.target.innerText==="Random Quote"){
-        //random quote function
-        // sliderContent[i].classList.remove('hidden');
-        // sliderContent[i].classList.add('visible');
         getRandomQuote();
     }else if(evt.target.innerText==="tweet"){
         //tweet function
     }
 }
 function eventLoader(){
-    console.log("eventLoader Passed");
+	console.log("eventLoader Passed");
     if(firstRun===true){
     sliderContent[0].classList.remove('hidden');
     sliderContent[0].classList.add('visible');
+    prevQuote=i;
     firstRun=false;
     }
     document.addEventListener("click",clickedButton);
