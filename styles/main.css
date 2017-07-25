@@ -133,7 +133,7 @@ body{
     clear: both;
 
 }
-.tweet-btn{
+#tweet-btn{
     bottom: 145px;
     position: relative;
     float: right;
@@ -152,7 +152,7 @@ body{
     box-shadow: 10px 10px 22px -6px rgba(140,140,140,0.7);
     z-index: 999;
 }
-.tweet-btn:hover{
+#tweet-btn:hover{
     position: relative;
     height: 45px;
     width: 77px;
@@ -169,7 +169,7 @@ body{
     cursor: pointer;
     z-index: 999;
 }
-.tweet-btn:active{
+#tweet-btn:active{
     cursor: wait;
     background: rgb(42, 196, 255);
     background: -moz-linear-gradient(left, rgba(249, 249, 255, 0.27) 0%, rgba(42, 196, 255, 0.2) 25%, rgba(42, 196, 255, 0.4) 67%, rgba(42, 196, 255, 0.7) 100%);
@@ -183,13 +183,13 @@ body{
     -moz-box-shadow: 10px 10px 22px -6px rgba(140,140,140,0.7);
     box-shadow: 10px 10px 22px -6px rgba(140,140,140,0.7);
 }
-.tweet-btn:hover{
+#tweet-btn:hover{
     cursor: pointer;
 }
-.tweet-btn:focus{
+#tweet-btn:focus{
     outline: none;
 }
-.tweet-btn span {
+#tweet-btn span {
      color: white;
      font-size: 130%;
      font-family: 'Bubbler One', sans-serif;
@@ -241,9 +241,12 @@ a .fa-github-square:hover{
         width: 100%;
     }
     .quote{
-        margin-top: 75px;
-        margin-left: 80px;
-
+        margin-top: 50px;
+        margin-left: 50px;
+        font-size: 160%;
     }
-
+    .author{
+        padding-right: 40px;
+        font-size: 16px;
+    }
 }
