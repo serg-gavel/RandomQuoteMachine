@@ -56,7 +56,7 @@ body{
 .col-md-6 .content-img {
     height: 300px;
     width: 100%;
-    background-image: url("../img/600x300.jpg");
+    /*background-image: url("../img/600x300.jpg");*/
     position: relative;
     float: left;
     z-index: 0;
@@ -75,6 +75,7 @@ body{
     margin: 0 auto;
     height: 100px;
     width: 200px;
+    outline: none;
 }
 .btn{
     height: 68px;
@@ -90,6 +91,7 @@ body{
     -webkit-box-shadow: 10px 10px 22px -6px rgba(140,140,140,0.7);
     -moz-box-shadow: 10px 10px 22px -6px rgba(140,140,140,0.7);
     box-shadow: 10px 10px 22px -6px rgba(140,140,140,0.7);
+    outline: none;
 }
 .btn:hover{
     cursor: pointer;
@@ -121,6 +123,7 @@ body{
     -webkit-box-shadow: 10px 10px 22px -6px rgba(140,140,140,0.7);
     -moz-box-shadow: 10px 10px 22px -6px rgba(140,140,140,0.7);
     box-shadow: 10px 10px 22px -6px rgba(140,140,140,0.7);
+    outline: none;
 }
 .btn span {
     color: white;
@@ -132,6 +135,9 @@ body{
     content: '';
     clear: both;
 
+}
+#quote-btn{
+    outline: none;
 }
 #tweet-btn{
     bottom: 145px;

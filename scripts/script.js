@@ -2,21 +2,21 @@ var sliderContent = document.getElementsByClassName('content-container');
 var quoteText = document.getElementsByClassName('quote');
 var quoteAuthor = document.getElementsByClassName('author');
 var i=1;
+var prevQuote=0;
+var maxQuotes=10;
 
 function getRandomQuote(){
-    if(i>=1){
-        sliderContent[i-1].classList.add('hidden');
-        sliderContent[i-1].classList.remove('visible');
-        sliderContent[i].classList.remove('hidden');
-        sliderContent[i].classList.add('visible');
-    }
-    if(i>=9){
-        i = 0;
-        sliderContent[9].classList.add('hidden');
-        sliderContent[i].classList.remove('hidden');
-        sliderContent[i].classList.add('visible');
-    }
-    i++;
+    prevQuote=i;
+	i=Math.floor(Math.random() * (maxQuotes - 0)) + 0;
+	if(prevQuote==i){
+		getRandomQuote();
+	}
+	sliderContent[prevQuote].classList.add('hidden');
+    sliderContent[prevQuote].classList.remove('visible');
+
+    sliderContent[i].classList.remove('hidden');
+    sliderContent[i].classList.add('visible');
+    console.log(i);
 }
 function clickedButton(evt){
     if(evt.target.innerText==="Random Quote"){
@@ -26,8 +26,7 @@ function clickedButton(evt){
     }
 }
 function eventLoader(){
-    sliderContent[0].classList.remove('hidden');
-    sliderContent[0].classList.add('visible');
+    getRandomQuote();
     document.addEventListener("click",clickedButton);
 }
 window.onload = eventLoader();
